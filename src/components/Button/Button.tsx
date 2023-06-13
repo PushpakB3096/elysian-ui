@@ -1,9 +1,12 @@
 import React from 'react';
+import './Button.css'
 
-interface ButtonProps {}
+interface ButtonProps {
+  text: string;
+}
 
-const Button: React.FC<ButtonProps> = ({}) => {
-    return <div>Button</div>;
+const Button: React.FC<ButtonProps> = ({ text }) => {
+  return <button>{text}</button>;
 };
 
 export default Button;
