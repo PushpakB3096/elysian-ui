@@ -1,0 +1,14 @@
+# Ignore Markdown files
+*.md
+
+# Ignore JavaScript files in the "dist" directory
+/dist/*.js
+
+# Ignore CSS files in the "styles" directory
+/styles/*.css
+
+# Ignore all files in the "node_modules" directory
+/node_modules/**
+
+# Ignore TypeScript declaration files
+**/*.d.ts
