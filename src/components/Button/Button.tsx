@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { ButtonSizes, ButtonVariants } from './Button.types';
+import React from "react";
+import styled, { css } from "styled-components";
+import { ButtonSizes, ButtonVariants } from "./Button.types";
 
 export interface ButtonProps {
   label: string;
@@ -75,8 +75,8 @@ const BaseButton = styled.button<Partial<ButtonProps>>`
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: none;
-  opacity: ${props => (props.isDisabled ? '0.5' : '1')};
-  cursor: ${props => (props.isDisabled ? 'not-allowed' : 'pointer')};
+  opacity: ${(props) => (props.isDisabled ? "0.5" : "1")};
+  cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
 
   ${getVariantStyles}
   ${getButtonSize}
