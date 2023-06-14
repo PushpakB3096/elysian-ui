@@ -11,7 +11,7 @@
     "build-storybook": "storybook build",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "type-check": "tsc --pretty --noEmit"
+    "type-check": "tsc --pretty"
   },
   "husky": {
     "hooks": {
