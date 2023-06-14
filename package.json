@@ -60,5 +60,9 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/PushpakB3096"
+  },
+  "dependencies": {
+    "@types/styled-components": "^5.1.26",
+    "styled-components": "^5.3.10"
   }
 }

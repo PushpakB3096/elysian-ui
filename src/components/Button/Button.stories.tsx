@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
+import { ButtonVariants } from './Button.types';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
   title: 'Atoms/Button',
   component: Button,
@@ -11,9 +11,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const HelloWorld: Story = {
+export const DefaultButton: Story = {
   args: {
-    text: 'Hello, world!'
+    label: 'Hello, world!'
+  }
+};
+
+export const PrimaryButton: Story = {
+  args: {
+    label: 'Hello, world!',
+    variant: ButtonVariants.PRIMARY
+  }
+};
+
+export const SecondaryButton: Story = {
+  args: {
+    label: 'Hello, world!',
+    variant: ButtonVariants.SECONDARY
+  }
+};
+
+export const GhostButton: Story = {
+  args: {
+    label: 'Hello, world!',
+    variant: ButtonVariants.GHOST
   }
 };
