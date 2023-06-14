@@ -6,6 +6,7 @@ export interface ButtonProps {
   label: string;
   variant?: ButtonVariants;
   size?: ButtonSizes;
+  isDisabled?: boolean;
 }
 
 const getVariantStyles = (props: Partial<ButtonProps>) => {
@@ -55,7 +56,7 @@ const getButtonSize = (props: Partial<ButtonProps>) => {
     case ButtonSizes.SMALL:
       return css`
         padding: 0.3rem;
-        font-size: 0.75rem;
+        font-size: 0.65rem;
       `;
     case ButtonSizes.LARGE:
       return css`
@@ -74,7 +75,8 @@ const BaseButton = styled.button<Partial<ButtonProps>>`
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: none;
-  cursor: pointer;
+  opacity: ${props => (props.isDisabled ? '0.5' : '1')};
+  cursor: ${props => (props.isDisabled ? 'not-allowed' : 'pointer')};
 
   ${getVariantStyles}
   ${getButtonSize}
