@@ -20,8 +20,8 @@
     }
   },
   "lint-staged": {
-    "*.ts": "prettier --write && git add -A .",
-    "*.tsx": "prettier --write && git add -A ."
+    "*.ts": "prettier --write",
+    "*.tsx": "prettier --write"
   },
   "repository": {
     "type": "git",
