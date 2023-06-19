@@ -19,8 +19,7 @@ export const DefaultButton: Story = {
 
 export const PrimaryButton: Story = {
   args: {
-    label: "Hello, world!",
-    variant: ButtonVariants.PRIMARY
+    label: "Hello, world!"
   }
 };
 
@@ -35,5 +34,12 @@ export const GhostButton: Story = {
   args: {
     label: "Hello, world!",
     variant: ButtonVariants.GHOST
+  }
+};
+
+export const FullWidthButton: Story = {
+  args: {
+    label: "Hello, world!",
+    isBlockLevel: true
   }
 };

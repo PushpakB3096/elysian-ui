@@ -7,8 +7,8 @@ export interface ButtonProps {
   variant?: ButtonVariants;
   size?: ButtonSizes;
   isDisabled?: boolean;
+  isBlockLevel?: boolean;
 }
-// TEST
 
 const getVariantStyles = (props: Partial<ButtonProps>) => {
   switch (props.variant) {
@@ -76,6 +76,7 @@ const BaseButton = styled.button<Partial<ButtonProps>>`
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: none;
+  width: ${(props) => props.isBlockLevel && "100%"};
   opacity: ${(props) => (props.isDisabled ? "0.5" : "1")};
   cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
 
