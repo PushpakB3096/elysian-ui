@@ -8,7 +8,7 @@
     "rollup": "rollup -c --bundleConfigAsCjs",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -o docs-build",
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "type-check": "tsc --pretty"
