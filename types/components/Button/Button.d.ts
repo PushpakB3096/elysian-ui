@@ -5,6 +5,7 @@ export interface ButtonProps {
     variant?: ButtonVariants;
     size?: ButtonSizes;
     isDisabled?: boolean;
+    isBlockLevel?: boolean;
 }
 declare const Button: React.FC<ButtonProps>;
 export default Button;
