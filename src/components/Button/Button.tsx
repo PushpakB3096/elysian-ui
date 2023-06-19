@@ -32,7 +32,7 @@ const getVariantStyles = (props: Partial<ButtonProps>) => {
       `;
     case ButtonVariants.GHOST:
       return css`
-        background: #fff;
+        background: transparent;
 
         &:hover {
           background: #73828c3b;
