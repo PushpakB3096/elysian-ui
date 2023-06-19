@@ -16,12 +16,12 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run test && git add -A . && npm run type-check"
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {
-    "*.ts": "prettier --write",
-    "*.tsx": "prettier --write"
+    "*.ts": "npm run type-check && prettier --write",
+    "*.tsx": "npm run type-check && prettier --write"
   },
   "repository": {
     "type": "git",
