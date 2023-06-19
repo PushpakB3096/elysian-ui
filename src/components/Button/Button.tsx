@@ -80,8 +80,8 @@ const BaseButton = styled.button<Partial<ButtonProps>>`
   opacity: ${(props) => (props.isDisabled ? "0.5" : "1")};
   cursor: ${(props) => (props.isDisabled ? "not-allowed" : "pointer")};
 
-  ${getVariantStyles}
-  ${getButtonSize}
+  ${getVariantStyles};
+  ${getButtonSize};
 `;
 
 const Button: React.FC<ButtonProps> = ({
