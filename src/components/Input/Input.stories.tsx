@@ -28,7 +28,8 @@ export const DefaultInput: Story = (args) => {
 };
 
 DefaultInput.args = {
-  placeholder: "Default Input"
+  placeholder: "Default Input",
+  helperText: "Helper text goes here"
 };
 
 export const LargeInput: Story = (args) => {

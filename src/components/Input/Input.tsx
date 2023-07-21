@@ -10,9 +10,9 @@ export interface InputProps {
   type?: "number" | "text" | "email"; // TODO: add all
   // TODO: need better styling for disabled state
   isDisabled?: boolean;
-
   // TODO: add types
   onChange: (e: any) => void;
+  helperText?: string;
 }
 
 const getInputPadding = (props: Partial<InputProps>) => {
@@ -45,16 +45,27 @@ const Input: React.FC<InputProps> = ({
   boxSize = InputSizes.NORMAL,
   type = "text",
   isDisabled = false,
+  helperText,
   ...restProps
 }) => {
   return (
-    <StyledInput
-      boxSize={boxSize}
-      disabled={isDisabled}
-      type={type}
-      maxLength={3}
-      {...restProps}
-    />
+    <div style={{ display: "flex", flexDirection: "column", rowGap: "8px" }}>
+      <StyledInput
+        boxSize={boxSize}
+        disabled={isDisabled}
+        type={type}
+        maxLength={3}
+        {...restProps}
+      />
+      <em
+        style={{
+          fontSize: "small",
+          color: "gray"
+        }}
+      >
+        {helperText}
+      </em>
+    </div>
   );
 };
 
