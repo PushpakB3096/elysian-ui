@@ -1,6 +1,6 @@
 {
   "name": "@pushpakb3096/elysian-ui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,10 @@
     "build-storybook": "storybook build -o docs-build",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "type-check": "tsc --pretty"
+    "type-check": "tsc --pretty",
+    "pub": "npm version patch --force && npm publish",
+    "pub-major": "npm version major --force && npm publish",
+    "pub-minor": "npm version minor --force && npm publish"
   },
   "lint-staged": {
     "*.ts": [
