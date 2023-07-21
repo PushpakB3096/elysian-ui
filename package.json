@@ -1,6 +1,6 @@
 {
   "name": "@pushpakb3096/elysian-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -13,15 +13,13 @@
     "format": "prettier --write .",
     "type-check": "tsc --pretty"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run test"
-    }
-  },
   "lint-staged": {
-    "*.ts": "npm run type-check && prettier --write",
-    "*.tsx": "npm run type-check && prettier --write"
+    "*.ts": [
+      "npm run type-check"
+    ],
+    "*.tsx": [
+      "npm run type-check"
+    ]
   },
   "repository": {
     "type": "git",

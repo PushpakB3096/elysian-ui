@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, KeyboardEvent } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import { InputSizes } from "./Input.types";
 
@@ -52,6 +52,7 @@ const Input: React.FC<InputProps> = ({
       boxSize={boxSize}
       disabled={isDisabled}
       type={type}
+      maxLength={3}
       {...restProps}
     />
   );
