@@ -30,6 +30,13 @@ export const SecondaryButton: Story = {
   }
 };
 
+export const DashedButton: Story = {
+  args: {
+    label: "Hello, world!",
+    variant: ButtonVariants.DASHED
+  }
+};
+
 export const GhostButton: Story = {
   args: {
     label: "Hello, world!",
