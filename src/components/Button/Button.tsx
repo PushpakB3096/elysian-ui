@@ -1,6 +1,7 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled, { ThemeProvider, css } from "styled-components";
 import { ButtonSizes, ButtonVariants } from "./Button.types";
+import theme from "../../theme";
 
 export interface ButtonProps {
   label: string;
@@ -14,21 +15,21 @@ const getVariantStyles = (props: Partial<ButtonProps>) => {
   switch (props.variant) {
     case ButtonVariants.PRIMARY:
       return css`
-        background: #1677ff;
-        color: #fff;
+        background: ${(props) => props.theme.color.primary1};
+        color: ${(props) => props.theme.color.white};
 
         &:hover {
-          background: #1677ffeb;
+          background: ${(props) => props.theme.color.primary2};
         }
       `;
     case ButtonVariants.SECONDARY:
       return css`
-        background: #fff;
-        border: 1px solid #73828c3b;
+        background: ${(props) => props.theme.color.white};
+        border: ${(props) => `1px solid ${props.theme.color.secondary1}`};
 
         &:hover {
-          border: 1px solid #1677ffeb;
-          color: #1677ffeb;
+          border: ${(props) => `1px solid ${props.theme.color.primary2}`};
+          color: ${(props) => props.theme.color.primary2};
         }
       `;
     case ButtonVariants.GHOST:
@@ -36,17 +37,17 @@ const getVariantStyles = (props: Partial<ButtonProps>) => {
         background: transparent;
 
         &:hover {
-          background: #73828c3b;
+          background: ${(props) => props.theme.color.secondary1};
         }
       `;
     case ButtonVariants.DASHED:
       return css`
-        background: #fff;
-        border: 1px dashed #73828c3b;
+        background: ${(props) => props.theme.color.white};
+        border: ${(props) => `1px dashed ${props.theme.color.secondary1}`};
 
         &:hover {
-          border: 1px dashed #1677ffeb;
-          color: #1677ffeb;
+          border: ${(props) => `1px dashed ${props.theme.color.primary2}`};
+          color: ${(props) => props.theme.color.primary2};
         }
       `;
   }
@@ -91,9 +92,11 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <BaseButton variant={variant} size={size} {...props}>
-      {label}
-    </BaseButton>
+    <ThemeProvider theme={theme}>
+      <BaseButton variant={variant} size={size} {...props}>
+        {label}
+      </BaseButton>
+    </ThemeProvider>
   );
 };
 
