@@ -76,5 +76,5 @@ export const DisabledInput: Story = (args) => {
 
 DisabledInput.args = {
   placeholder: "Disabled Input",
-  isDisabled: true
+  disabled: true
 };

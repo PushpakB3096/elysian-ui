@@ -38,10 +38,10 @@ interface Theme extends DefaultTheme {
 const theme: Theme = {
   color: {
     primary1: "#1677ff",
-    primary2: "#1677ffeb",
+    primary2: "#70a5ef",
     primary3: "#",
 
-    secondary1: "#73828c3b",
+    secondary1: "#73828c",
     secondary2: "#97a7b2",
     secondary3: "#ccdde8",
 

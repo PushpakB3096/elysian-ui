@@ -1,17 +1,17 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { InputSizes } from "./Input.types";
+import theme from "../../theme";
+import type { ChangeEventHandler } from "react";
 
 export interface InputProps {
   value: string;
   placeholder?: string;
   boxSize?: InputSizes;
   name?: string;
+  disabled?: boolean;
   type?: "number" | "text" | "email"; // TODO: add all
-  // TODO: need better styling for disabled state
-  isDisabled?: boolean;
-  // TODO: add types
-  onChange: (e: any) => void;
+  onChange: ChangeEventHandler<HTMLInputElement>;
   helperText?: string;
 }
 
@@ -33,10 +33,26 @@ const getInputPadding = (props: Partial<InputProps>) => {
 };
 
 const StyledInput = styled.input<Partial<InputProps>>`
-  outline: 1px solid #1677ff;
-  border: 1px solid #1677ff;
+  outline: ${(props) =>
+    props.disabled
+      ? `1px solid ${theme.color.primary2}`
+      : `1px solid ${theme.color.primary1}`};
+  border: ${(props) =>
+    props.disabled
+      ? `1px solid ${theme.color.primary2}`
+      : `1px solid ${theme.color.primary1}`};
   border-radius: 6px;
-  color: gray;
+  color: ${theme.color.secondary1};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "inherit")};
+
+  :disabled::placeholder {
+    color: ${theme.color.secondary2};
+  }
+
+  ::placeholder {
+    /* For Chrome, Firefox, Opera, Safari 10.1+ */
+    color: ${theme.color.secondary1};
+  }
 
   ${getInputPadding};
 `;
@@ -44,7 +60,7 @@ const StyledInput = styled.input<Partial<InputProps>>`
 const Input: React.FC<InputProps> = ({
   boxSize = InputSizes.NORMAL,
   type = "text",
-  isDisabled = false,
+  disabled = false,
   helperText,
   ...restProps
 }) => {
@@ -52,15 +68,15 @@ const Input: React.FC<InputProps> = ({
     <div style={{ display: "flex", flexDirection: "column", rowGap: "8px" }}>
       <StyledInput
         boxSize={boxSize}
-        disabled={isDisabled}
+        disabled={disabled}
         type={type}
-        maxLength={3}
+        maxLength={10}
         {...restProps}
       />
       <em
         style={{
           fontSize: "small",
-          color: "gray"
+          color: theme.color.secondary1
         }}
       >
         {helperText}
